@@ -39,13 +39,17 @@
             Sign in
           </a>
         </li>
-        <li>
+        
         <%else %>
+        <li>
           <a href="/user_sign_out">
             Sign out
           </a>
         </li>
       <%end%>
+
+      <p><%= notice %></p>
+      <p><%= alert %></p>
 
     </ul>
     <%= yield %>
