@@ -1,29 +1,30 @@
 <div>
   <div>
     <h1>
-      Photo #<%= @the_photo.id %> details
+      Photo Details
     </h1>
 
-    <div>
-      <div>
-        <a href="/photos">
-          Go back
-        </a>
-      </div>
-
-      <div>
-        <a href="/delete_photo/<%= @the_photo.id %>">
-          Delete photo
-        </a>
-      </div>
-    </div>
-
     <dl>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <img src="<%= @the_photo.image %>">
+      </dd>
+
       <dt>
         Caption
       </dt>
       <dd>
         <%= @the_photo.caption %>
+      </dd>
+      
+      <dt>
+        Owner
+      </dt>
+      <dd>
+        <%= @the_photo.owner_id %>
       </dd>
 
       <dt>
@@ -34,24 +35,10 @@
       </dd>
 
       <dt>
-        Image
-      </dt>
-      <dd>
-        <%= @the_photo.image %>
-      </dd>
-
-      <dt>
         Likes count
       </dt>
       <dd>
         <%= @the_photo.likes_count %>
-      </dd>
-
-      <dt>
-        Owner
-      </dt>
-      <dd>
-        <%= @the_photo.owner_id %>
       </dd>
 
       <dt>
