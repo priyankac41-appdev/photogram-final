@@ -8,6 +8,12 @@ class UserAuthenticationController < ApplicationController
     render({ :template => "user_authentication/index.html.erb" })
   end
 
+  def show
+    matching_users = User.all
+    @list_of_users = matching_users.order({ :username => :asc })
+    render({ :template => "user_authentication/show.html.erb" })
+  end
+
   def sign_in_form
     render({ :template => "user_authentication/sign_in.html.erb" })
   end
