@@ -28,17 +28,25 @@
         </a>
       </li>
 
-        <li>
-          <a href="/user_sign_in">
-            Sign in
-          </a>
-        </li>
-
+        <%if session.fetch(:user_id) == nil%>
         <li>
           <a href="/user_sign_up">
             Sign up
           </a>
         </li>
+                <li>
+          <a href="/user_sign_in">
+            Sign in
+          </a>
+        </li>
+        <li>
+        <%else %>
+          <a href="/user_sign_out">
+            Sign out
+          </a>
+        </li>
+      <%end%>
+
     </ul>
     <%= yield %>
   </body>
