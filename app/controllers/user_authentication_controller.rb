@@ -9,8 +9,9 @@ class UserAuthenticationController < ApplicationController
   end
 
   def show
-    matching_users = User.all
-    @list_of_users = matching_users.order({ :username => :asc })
+    user_id = params.fetch("user_id")
+    matching_user = User.where({ :id => user_id })
+    @the_user = matching_user.at(0)
     render({ :template => "user_authentication/show.html.erb" })
   end
 

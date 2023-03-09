@@ -1,1 +1,50 @@
-howdy, world
+<h1>
+  <%= @the_user.username %>
+</h1>
+
+<dl>
+  <dt>Private</dt>
+  <dd>false</dd>
+
+  <dt>Followers</dt>
+  <dd>
+    37
+
+
+      <div>
+          <form action="/insert_follow_request" method="post">
+            <input type="hidden" name="query_recipient_id" value="<%= @the_user.id%>">
+            <input type="hidden" name="query_sender_id" value="%= session.fetch(:user_id)%>">
+            <input type="hidden" name="query_status" value="92">
+
+            <button>
+              Follow
+            </button>
+          </form>
+    </div>
+
+  </dd>
+
+  <dt>Following</dt>
+  <dd>12</dd>
+
+</dl>
+
+<nav>
+  <ul>
+    <li>
+      <a href="/users/bob">Profile</a>
+    </li>
+    <li>
+      <a href="/users/bob/liked_photos">Liked photos</a>
+    </li>
+    <li>
+      <a href="/users/bob/feed">Feed</a>
+    </li>
+    <li>
+      <a href="/users/bob/discover">Discover</a>
+    </li>
+  </ul>
+</nav>
+
+<h2>Own photos (6)</h2>
