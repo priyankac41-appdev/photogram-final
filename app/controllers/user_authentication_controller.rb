@@ -10,6 +10,7 @@ class UserAuthenticationController < ApplicationController
 
   def show
     user_id = params.fetch("user_id")
+    #user_id = session[:user_id]
     matching_user = User.where({ :id => user_id })
     @the_user = matching_user.at(0)
     render({ :template => "user_authentication/show.html.erb" })
